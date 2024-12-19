@@ -1,26 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:rejalar_apps/widgets/reja.dart';
+
+import '../models/reja_modeli.dart';
 
 class RejalarRuyxati extends StatelessWidget {
-  const RejalarRuyxati({super.key});
+
+  List<RejaModeli> ruyxat;
+  RejalarRuyxati(this.ruyxat);
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView.builder(
-        itemCount: 10,
+        itemCount: ruyxat.length,
         itemBuilder: (ctx, index) {
-          return ListTile(
-            leading:
-                IconButton(onPressed: () {}, icon: Icon(Icons.circle_outlined)),
-            title: Text("Bozorga borish"),
-            trailing: IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.delete_forever,
-                color: Colors.red,
-              ),
-            ),
-          );
+          return Reja(ruyxat[index]);
         },
       ),
     );

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:rejalar_apps/models/reja_modeli.dart';
 
 class RejalarMalumoti extends StatelessWidget {
-  const RejalarMalumoti({super.key});
+  List<RejaModeli> ruyxat;
+
+  RejalarMalumoti(this.ruyxat);
 
   @override
   Widget build(BuildContext context) {
-    return  const Padding(
+    return  Padding(
       padding: EdgeInsets.all(20.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -13,18 +16,17 @@ class RejalarMalumoti extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "03",
-                style: TextStyle(
+              Text(ruyxat.length < 10 ? "0${ruyxat.length}":"${ruyxat.length}",
+                style: const TextStyle(
                   color: Colors.black,
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Text("Barcha rajlaringiz",style: TextStyle(color: Colors.grey,fontSize: 15,),)
+              const Text("Barcha rajlaringiz",style: TextStyle(color: Colors.grey,fontSize: 15,),)
             ],
           ),
-          Column(
+          const Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text(

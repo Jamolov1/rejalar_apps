@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:rejalar_apps/models/reja_modeli.dart';
 import 'package:rejalar_apps/widgets/rajalar_sanasi.dart';
+import 'package:rejalar_apps/widgets/reja_qushish.dart';
 import 'package:rejalar_apps/widgets/rejalar_malumoti.dart';
 import 'package:rejalar_apps/widgets/rejalar_ruyxati.dart';
 
@@ -12,6 +14,9 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   DateTime belgilanganSana = DateTime.now();
+
+  var ruyxat = Rejalar();
+
 
   void sananiTanlash() {
     showDatePicker(
@@ -40,6 +45,19 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  void yangiRejaQushish() {
+    showModalBottomSheet(
+        context: context,
+        builder: (ctx) {
+          return YangiReja(rejaQushish);
+        });
+  }
+
+  void rejaQushish(String name,DateTime kun){
+    setState(() {
+      ruyxat.addReja(name, kun);
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,9 +77,15 @@ class _HomePageState extends State<HomePage> {
             oldingiSana,
             keyingiSana,
           ),
-          RejalarMalumoti(),
-          RejalarRuyxati(),
+          RejalarMalumoti(ruyxat.rejalar),
+          RejalarRuyxati(ruyxat.rejalar),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          yangiRejaQushish();
+        },
+        child: Icon(Icons.add),
       ),
     );
   }
