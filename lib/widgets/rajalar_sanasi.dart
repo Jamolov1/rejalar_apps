@@ -8,11 +8,11 @@ class RajalarSanasi extends StatelessWidget {
   final Function keyingiSana;
 
   const RajalarSanasi(
-    this.sananiTanlash,
-    this.belgilanganSana,
-    this.keyingiSana,
-    this.oldingiSana,
-  );
+      this.sananiTanlash,
+      this.belgilanganSana,
+      this.keyingiSana,
+      this.oldingiSana,
+      );
 
   @override
   Widget build(BuildContext context) {

@@ -22,9 +22,9 @@ class _RejaState extends State<Reja> {
         },
         icon: widget.reja.bajarildi
             ? Icon(
-                Icons.check_circle_outline,
-                color: Colors.green,
-              )
+          Icons.check_circle_outline,
+          color: Colors.green,
+        )
             : Icon(Icons.circle_outlined),
       ),
       title: Text(

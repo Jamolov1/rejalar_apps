@@ -15,10 +15,10 @@ class _YangiRejaState extends State<YangiReja> {
 
   void RejaUchunSanaTanlash() {
     showDatePicker(
-            context: context,
-            firstDate: DateTime(2020),
-            lastDate: DateTime(2030),
-            initialDate: DateTime.now())
+        context: context,
+        firstDate: DateTime(2020),
+        lastDate: DateTime(2030),
+        initialDate: DateTime.now())
         .then((sana) {
       setState(() {
         rejaUchunSana = sana!;

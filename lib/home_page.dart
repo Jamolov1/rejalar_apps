@@ -20,10 +20,10 @@ class _HomePageState extends State<HomePage> {
 
   void sananiTanlash() {
     showDatePicker(
-            context: context,
-            firstDate: DateTime(2020),
-            lastDate: DateTime(2030),
-            initialDate: DateTime.now())
+        context: context,
+        firstDate: DateTime(2020),
+        lastDate: DateTime(2030),
+        initialDate: DateTime.now())
         .then((sana) {
       setState(() {
         belgilanganSana = sana!;
